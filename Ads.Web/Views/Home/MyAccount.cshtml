@@ -1,0 +1,24 @@
+﻿@model ViewModel
+
+@foreach (var ad in Model.Ads)
+{
+    <div class="row">
+        <form method="post" action="/home/delete">
+            <div class="container offset-9">
+                <div class="jumbotron">
+                    <h5>@ad.Name</h5>
+                    <h5>@ad.DateSubmitted.ToLongDateString()</h5>
+                    <h5>Phone Number: @ad.PhoneNumber</h5>
+                    <h3>Details:</h3>
+                    <p>@ad.Text</p>
+                    <input type="hidden" value="@ad.Id" name="id" />
+
+                    <button class="btn btn-danger">Delete</button>
+
+                </div>
+                </div>
+        </form>
+    </div>
+}
+
+
